@@ -20,7 +20,7 @@
   <items>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="233.0">
          <children>
-            <TableView prefHeight="398.0" prefWidth="234.0">
+            <TableView prefHeight="398.0" prefWidth="234.0" fx:id="tabelaOsobe">
               <columns>
                 <TableColumn prefWidth="116.0" text="Ime" />
                 <TableColumn prefWidth="117.0" text="Prezime" />
@@ -45,12 +45,12 @@
         </rowConstraints>
          <children>
             <Label text="Podaci o osobi" />
-            <Label text="Ime" GridPane.rowIndex="1" />
-            <Label text="Prezime" GridPane.rowIndex="2" />
-            <Label text="Ulica" GridPane.rowIndex="3" />
-            <Label text="Grad" GridPane.rowIndex="4" />
-            <Label text="Postanski broj" GridPane.rowIndex="5" />
-            <Label text="Rođendan" GridPane.rowIndex="6" />
+            <Label text="Ime" GridPane.rowIndex="1" fx:id="imeText"/>
+            <Label text="Prezime" GridPane.rowIndex="2" fx:id="prezimeText"/>
+            <Label text="Ulica" GridPane.rowIndex="3" fx:id="ulicaText"/>
+            <Label text="Grad" GridPane.rowIndex="4" fx:id="gradText"/>
+            <Label text="Postanski broj" GridPane.rowIndex="5" fx:id="postanskiBrojText"/>
+            <Label text="Rođendan" GridPane.rowIndex="6" fx:id="rodjendanText"/>
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
@@ -84,7 +84,7 @@
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
               <buttons>
 
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Dodaj">
+                <Button mnemonicParsing="false" text="Dodaj" fx:id="btnDodaj">
                         <graphic>
                             <ImageView fitHeight="16" fitWidth="16" preserveRatio="false">
                                 <image>
@@ -94,7 +94,7 @@
                         </graphic>
                   </Button>
 
-                  <Button mnemonicParsing="false" text="Obrisi">
+                  <Button mnemonicParsing="false" text="Obrisi" fx:id="btnObrisi">
                       <graphic>
                           <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
                               <image>
@@ -103,6 +103,7 @@
                           </ImageView>
                       </graphic>
                   </Button>
+
               </buttons>
                <GridPane.margin>
                   <Insets right="20.0" />
