@@ -24,8 +24,8 @@
          <children>
             <TableView fx:id="tabelaOsobe" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" prefHeight="398.0" prefWidth="234.0">
               <columns>
-                <TableColumn prefWidth="116.0" text="Ime" />
-                <TableColumn prefWidth="117.0" text="Prezime" />
+                <TableColumn prefWidth="116.0" text="Ime" fx:id="imeKolona"/>
+                <TableColumn prefWidth="117.0" text="Prezime" fx:id="prezimaKolona"/>e
               </columns>
             </TableView>
          </children></AnchorPane>

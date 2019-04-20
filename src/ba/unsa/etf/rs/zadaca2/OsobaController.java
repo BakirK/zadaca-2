@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -36,7 +37,7 @@ public class OsobaController {
     private Button btnObrisi;
     @FXML
     private TableView tabelaOsobe;
-    ObservableList<Osoba> lista;
+    ObservableList<Osoba> lista = FXCollections.observableArrayList();;
     private OsobeModel model;
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
