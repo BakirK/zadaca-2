@@ -31,10 +31,10 @@ public class OsobeModel {
         }
 
         public void napuni () {
-            osobe.add(new Osoba("Bakir", "Karović", "Pozegina 42", "Sarajevo", 71000, "23.09.1999"));
-            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", "Sarajevo", 71000, "13.01.1999"));
-            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse", "Graz", 8010, "28.02.2000"));
-            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", "Brisel", 1000, "07.03.2000"));
+            osobe.add(new Osoba("Bakir", "Karović", "Pozegina 42", 71000, "Sarajevo", "23.09.1999"));
+            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", 71000, "Sarajevo", "13.01.1999"));
+            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse",8010, "Graz",  "28.02.2000"));
+            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", 1000, "Brisel", "07.03.2000"));
         }
 
         public void dodaj(Osoba o) {

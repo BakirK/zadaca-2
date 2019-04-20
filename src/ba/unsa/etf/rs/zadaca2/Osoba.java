@@ -20,8 +20,8 @@ public class Osoba {
 
     }
 
-    public Osoba(String imeIn, String prezimeIn, String ulicaIn, String gradIn,
-                 Integer postanskiBrojIn, String dateIn){
+    public Osoba(String imeIn, String prezimeIn, String ulicaIn,
+                 int postanskiBrojIn, String gradIn, String dateIn){
 
         this.ime = new SimpleStringProperty(imeIn);
         this.prezime = new SimpleStringProperty(prezimeIn);
@@ -33,6 +33,16 @@ public class Osoba {
         this.rodjendan = new SimpleObjectProperty<LocalDate>(temp);
     }
 
+
+    public Osoba(String imeIn, String prezimeIn, String ulicaIn,
+                 int postanskiBrojIn, String gradIn, LocalDate dateIn){
+        this.ime = new SimpleStringProperty(imeIn);
+        this.prezime = new SimpleStringProperty(prezimeIn);
+        this.ulica = new SimpleStringProperty(ulicaIn);
+        this.grad = new SimpleStringProperty(gradIn);
+        this.postanskiBroj = new SimpleIntegerProperty(postanskiBrojIn);
+        this.rodjendan = new SimpleObjectProperty<LocalDate>(dateIn);
+    }
 
     public String getIme() {
         return ime.get();
