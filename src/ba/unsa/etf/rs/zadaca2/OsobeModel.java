@@ -36,6 +36,10 @@ public class OsobeModel {
             osoba.add(new Osoba("Šeila", "Šeilić", "Herrengasse", "Graz", 8010, "28.02.2000"));
             osoba.add(new Osoba("Amra", "Amrica", "Rue Neuve", "Brisel", 1000, "07.03.2000"));
         }
+
+        public void dodaj(Osoba o) {
+            osoba.add(o);
+        }
 }
 
 
