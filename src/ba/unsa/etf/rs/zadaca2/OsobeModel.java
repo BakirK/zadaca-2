@@ -51,7 +51,7 @@ public class OsobeModel {
 
         public void obrisi(int index) {
             osobe.remove(index);
-            trenutnaOsoba = null;
+            //trenutnaOsoba = null;
         }
 }
 
