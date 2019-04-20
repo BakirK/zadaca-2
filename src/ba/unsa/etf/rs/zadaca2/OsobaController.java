@@ -4,9 +4,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
@@ -17,23 +15,24 @@ import java.time.format.DateTimeFormatter;
 public class OsobaController {
     private OsobeModel model;
     @FXML
-    private TableView tabelaOsobe;
+    private TextField imeText;
     @FXML
-    private Label imeText;
+    private TextField prezimeText;
     @FXML
-    private Label prezimeText;
+    private TextField ulicaText;
     @FXML
-    private Label ulicaText;
+    private TextField gradText;
     @FXML
-    private Label gradText;
+    private TextField postanskiBrojText;
     @FXML
-    private Label postanskiBrojText;
-    @FXML
-    private Label rodjendanText;
+    private DatePicker rodjendanText;
     @FXML
     private Button btnDodaj;
     @FXML
     private Button btnObrisi;
+    @FXML
+    private TableView tabelaOsobe;
+
 
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
@@ -61,7 +60,7 @@ public class OsobaController {
                     ulicaText.setText("");
                     gradText.setText("");
                     postanskiBrojText.setText("");
-                    rodjendanText.setText("");
+//                    rodjendanText.setDayCellFactory();
                 } else {
                     updateSelectedUser();
                 }
@@ -87,7 +86,7 @@ public class OsobaController {
         ulicaText.textProperty().bindBidirectional(model.getTrenutnaOsoba().ulicaProperty());
         gradText.textProperty().bindBidirectional(model.getTrenutnaOsoba().gradProperty());
         postanskiBrojText.textProperty().bindBidirectional(model.getTrenutnaOsoba().postanskiBrojProperty(), new NumberStringConverter());
-        rodjendanText.textProperty().bindBidirectional(model.getTrenutnaOsoba().rodjendanProperty(), new LocalDateStringConverter());
+        rodjendanText.valueProperty().bindBidirectional(model.getTrenutnaOsoba().rodjendanProperty());
     }
 
     private void setTextPropetryUnBind() {
@@ -96,14 +95,13 @@ public class OsobaController {
         ulicaText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().ulicaProperty());
         gradText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().gradProperty());
         postanskiBrojText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().postanskiBrojProperty());
-        rodjendanText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().rodjendanProperty());
-
+        rodjendanText.valueProperty().unbindBidirectional(model.getTrenutnaOsoba().rodjendanProperty());
     }
 
     @FXML
     private void dodajOsobu(MouseEvent mouseEvent) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-        LocalDate temp = LocalDate.parse(rodjendanText.getText().trim(), formatter);
+        LocalDate temp = LocalDate.parse(rodjendanText.getValue().format(formatter), formatter);
         model.dodaj(new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(),  temp));
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
