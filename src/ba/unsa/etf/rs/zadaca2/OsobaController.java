@@ -1,5 +1,6 @@
 package ba.unsa.etf.rs.zadaca2;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -9,6 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class OsobaController {
     private OsobeModel model;
@@ -98,7 +102,9 @@ public class OsobaController {
 
     @FXML
     private void dodajOsobu(MouseEvent mouseEvent) {
-        model.dodaj(new Osoba());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        LocalDate temp = LocalDate.parse(rodjendanText.getText().trim(), formatter);
+        model.dodaj(new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(),  temp));
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
         setTextPropetryBind();
