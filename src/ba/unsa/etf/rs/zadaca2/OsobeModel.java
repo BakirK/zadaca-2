@@ -34,14 +34,15 @@ public class OsobeModel {
 
         public void napuni () {
             osobe.add(new Osoba("Semso", "Semsic", "Pozegina 42", 71000, "Sarajevo", LocalDate.of(1999, 9, 23)));
-            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", 71000, "Sarajevo", LocalDate.of(1999, 1, 13)));
+            osobe.add(new Osoba("Hamo", "Hamic", "Gradačačka 16", 71000, "Sarajevo", LocalDate.of(1999, 1, 13)));
             osobe.add(new Osoba("Nedo", "Nedic", "Gornja mahala",71100, "Sarajevo",  LocalDate.of(1980, 12, 6)));
-            osobe.add(new Osoba("Mirso", "Mirsic", "Neka tamo daleko",72500, "Sarajevo",  LocalDate.of(1970, 11, 9)));
-            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse",8010, "Graz",  LocalDate.of(2000, 2, 28)));
+            osobe.add(new Osoba("Mirso", "Mirsic", "Neka tamo daleko",72500, "Sarajevo",  LocalDate.of(1976, 11, 9)));
+            osobe.add(new Osoba("Vlasta", "Vlastic", "Neka tamo daleko",72500, "Sarajevo",  LocalDate.of(1970, 10, 3)));
+//            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse",8010, "Graz",  LocalDate.of(2000, 2, 28)));
             osobe.add(new Osoba("Milada", "Miladic", "Neretvanska", 71000, "Sarajevo", LocalDate.of(2018, 12, 16)));
-            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", 1000, "Brisel", LocalDate.of(2000, 3, 7)));
-            osobe.add(new Osoba("Nadir", "Muratovic", "Dvorska", 71000, "Sarejevo", LocalDate.of(1999, 7, 21)));
-            osobe.add(new Osoba("Lamija", "Lamsa", "Nanin sokak", 71000, "Sarajevo", LocalDate.of(1999, 3, 11)));
+            osobe.add(new Osoba("Fata", "Fatic", "Rue Neuve", 1000, "Brisel", LocalDate.of(2000, 3, 7)));
+            osobe.add(new Osoba("Hamida", "Hamidic", "Dvorska", 71000, "Sarejevo", LocalDate.of(1999, 7, 21)));
+            osobe.add(new Osoba("Pero", "Peric", "Nanin sokak", 71000, "Sarajevo", LocalDate.of(1999, 3, 11)));
         }
 
         public void dodaj(Osoba o) {
