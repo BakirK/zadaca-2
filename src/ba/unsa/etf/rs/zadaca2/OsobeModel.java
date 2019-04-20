@@ -6,19 +6,19 @@ import javafx.collections.ObservableList;
 
 public class OsobeModel {
 
-        private ObservableList<Osoba> osoba = FXCollections.observableArrayList();
+        private ObservableList<Osoba> osobe = FXCollections.observableArrayList();
         private SimpleObjectProperty trenutnaOsoba = null;
 
 
-        private ObservableList<Osoba> getOsoba() {
-            return osoba;
+        public ObservableList<Osoba> getOsobe() {
+            return osobe;
         }
 
-        private void setOsoba(ObservableList<Osoba> osoba) {
-            this.osoba = osoba;
+        public void setOsobe(ObservableList<Osoba> osobe) {
+            this.osobe = osobe;
         }
 
-        private Object getTrenutnaOsoba() {
+        public Object getTrenutnaOsoba() {
             return trenutnaOsoba.get();
         }
 
@@ -26,19 +26,23 @@ public class OsobeModel {
             return trenutnaOsoba;
         }
 
-        private void setTrenutnaOsoba(Object trenutnaOsoba) {
+        public void setTrenutnaOsoba(Object trenutnaOsoba) {
             this.trenutnaOsoba.set(trenutnaOsoba);
         }
 
-        private void napuni () {
-            osoba.add(new Osoba("Bakir", "Karović", "Pozegina 42", "Sarajevo", 71000, "23.09.1999"));
-            osoba.add(new Osoba("Faris", "Baždar", "Gradačačka 16", "Sarajevo", 71000, "13.01.1999"));
-            osoba.add(new Osoba("Šeila", "Šeilić", "Herrengasse", "Graz", 8010, "28.02.2000"));
-            osoba.add(new Osoba("Amra", "Amrica", "Rue Neuve", "Brisel", 1000, "07.03.2000"));
+        public void napuni () {
+            osobe.add(new Osoba("Bakir", "Karović", "Pozegina 42", "Sarajevo", 71000, "23.09.1999"));
+            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", "Sarajevo", 71000, "13.01.1999"));
+            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse", "Graz", 8010, "28.02.2000"));
+            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", "Brisel", 1000, "07.03.2000"));
         }
 
         public void dodaj(Osoba o) {
-            osoba.add(o);
+            osobe.add(o);
+        }
+
+        public void obrisi() {
+
         }
 }
 
