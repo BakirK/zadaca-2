@@ -1,6 +1,5 @@
 package ba.unsa.etf.rs.zadaca2;
 
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -18,7 +17,6 @@ public class Osoba {
 
 
     public Osoba(){
-
     }
 
     public Osoba(String imeIn, String prezimeIn, String ulicaIn,
@@ -120,5 +118,10 @@ public class Osoba {
 
     public void setRodjendan(LocalDate rodjendan) {
         this.rodjendan.set(rodjendan);
+    }
+
+    @Override
+    public String toString() {
+        return ime.get() + prezime.get();
     }
 }
