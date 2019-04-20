@@ -8,12 +8,8 @@ import java.time.LocalDate;
 
 public class OsobeModel {
 
-        private ObservableList<Osoba> osobe = FXCollections.observableArrayList();
-
-
-
+    private ObservableList<Osoba> osobe = FXCollections.observableArrayList();
     private SimpleObjectProperty<Osoba> trenutnaOsoba = new SimpleObjectProperty();
-
 
         public ObservableList<Osoba> getOsobe() {
             return osobe;
@@ -27,7 +23,14 @@ public class OsobeModel {
             return trenutnaOsoba.get();
         }
 
-        private void setTrenutnaOsoba(Osoba trenutnaOsoba) {
+        public void setTrenutnaOsoba(Osoba trenutnaOsoba) {
+
+            if (this.trenutnaOsoba.get() == null) {
+                System.out.println("null222");
+            }
+            if (this.trenutnaOsoba.get() == null) {
+                System.out.println("null222");
+            }
             this.trenutnaOsoba.set(trenutnaOsoba);
         }
         public SimpleObjectProperty trenutnaOsobaProperty() {
@@ -55,7 +58,7 @@ public class OsobeModel {
 
         public void obrisi(int index) {
             osobe.remove(index);
-            trenutnaOsoba = null;
+            //trenutnaOsoba = null;
         }
 }
 

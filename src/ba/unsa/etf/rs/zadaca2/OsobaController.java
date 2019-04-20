@@ -141,13 +141,13 @@ public class OsobaController {
     private void obrisiOsobu(MouseEvent mouseEvent) {
         //setTextPropetryBind();
         setTextPropetryUnBind();
-        model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
-        //setTextPropetryBind();
-        tabelaOsobe.refresh();
-        tabelaOsobe.requestFocus();
-        //tabelaOsobe.getSelectionModel().selectLast();
-
-
+        if (tabelaOsobe.getSelectionModel().getSelectedIndex() != -1) {
+            model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
+            //setTextPropetryBind();
+            tabelaOsobe.refresh();
+            tabelaOsobe.requestFocus();
+            //tabelaOsobe.getSelectionModel().selectLast();
+        }
     }
 
     @FXML
