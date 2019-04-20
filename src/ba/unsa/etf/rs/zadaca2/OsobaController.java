@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
 
@@ -66,6 +67,7 @@ public class OsobaController {
         });
     }
 
+    @FXML
     private void updateSelectedUser() {
 
     }
@@ -88,5 +90,16 @@ public class OsobaController {
         postanskiBrojText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().postanskiBrojProperty());
         rodjendanText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().rodjendanProperty());
 
+    }
+
+    @FXML
+    private void dodajOsobu(MouseEvent mouseEvent) {
+        model.dodaj(new Osoba());
+        setTextPropetryUnBind();
+        model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
+        setTextPropetryBind();
+        tabelaOsobe.refresh();
+        tabelaOsobe.requestFocus();
+        tabelaOsobe.getSelectionModel().selectLast();
     }
 }
