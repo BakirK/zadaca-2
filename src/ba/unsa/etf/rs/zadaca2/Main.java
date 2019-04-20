@@ -4,10 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class Main extends Application {
 
@@ -20,7 +17,7 @@ public class Main extends Application {
         model.napuni();
         OsobaController ctrl = new OsobaController(model);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adresar.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/adresar.fxml"));
         loader.setController(ctrl);
         Parent root = loader.load();
 

@@ -49,10 +49,14 @@ public class OsobaController {
             public void changed(ObservableValue<? extends Osoba> observableValue, Osoba osobaOld, Osoba osobaNew) {
                 if (osobaOld != null) {
                     setTextPropetryUnBind();
-                    ;
                 }
                 if (osobaNew == null) {
-                    // TODO: SET DEFAULT TEXT ZA POLJA FORME
+                    imeText.setText("");
+                    prezimeText.setText("");
+                    ulicaText.setText("");
+                    gradText.setText("");
+                    postanskiBrojText.setText("");
+                    rodjendanText.setText("");
                 } else {
                     updateSelectedUser();
                 }
