@@ -34,7 +34,7 @@ public class Osoba {
     }
 
 
-    private String getIme() {
+    public String getIme() {
         return ime.get();
     }
 
@@ -42,12 +42,12 @@ public class Osoba {
         return ime;
     }
 
-    private void setIme(String ime) {
+    public void setIme(String ime) {
         this.ime.set(ime);
     }
 
 
-    private String getPrezime() {
+    public String getPrezime() {
         return prezime.get();
     }
 
@@ -55,12 +55,12 @@ public class Osoba {
         return prezime;
     }
 
-    private void setPrezime(String prezime) {
+    public void setPrezime(String prezime) {
         this.prezime.set(prezime);
     }
 
 
-    private String getUlica() {
+    public String getUlica() {
         return ulica.get();
     }
 
@@ -68,12 +68,12 @@ public class Osoba {
         return ulica;
     }
 
-    private void setUlica(String ulica) {
+    public void setUlica(String ulica) {
         this.ulica.set(ulica);
     }
 
 
-    private String getGrad() {
+    public String getGrad() {
         return grad.get();
     }
 
@@ -81,12 +81,12 @@ public class Osoba {
         return grad;
     }
 
-    private void setGrad(String grad) {
+    public void setGrad(String grad) {
         this.grad.set(grad);
     }
 
 
-    private int getPostanskiBroj() {
+    public int getPostanskiBroj() {
         return postanskiBroj.get();
     }
 
@@ -94,12 +94,12 @@ public class Osoba {
         return postanskiBroj;
     }
 
-    private void setPostanskiBroj(int postanskiBroj) {
+    public void setPostanskiBroj(int postanskiBroj) {
         this.postanskiBroj.set(postanskiBroj);
     }
 
 
-    private LocalDate getRodjendan() {
+    public LocalDate getRodjendan() {
         return rodjendan.get();
     }
 
@@ -107,7 +107,7 @@ public class Osoba {
         return rodjendan;
     }
 
-    private void setRodjendan(LocalDate rodjendan) {
+    public void setRodjendan(LocalDate rodjendan) {
         this.rodjendan.set(rodjendan);
     }
 }
