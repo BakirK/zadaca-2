@@ -24,7 +24,7 @@ public class Main extends Application {
         loader.setController(ctrl);
         Parent root = loader.load();
 
-        primaryStage.setScene(new Scene(root, 600, 300));
+        primaryStage.setScene(new Scene(root, 600, 350));
         primaryStage.setTitle("Adresar");
         primaryStage.show();
 

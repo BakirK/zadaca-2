@@ -18,15 +18,18 @@
 
 <!--TODO: obrisat fx:controller unutar splitPane-a -->
 
-<SplitPane dividerPositions="0.39464882943143814" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" >
+<SplitPane dividerPositions="0.39464882943143814" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
   <items>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="233.0">
          <children>
-            <TableView fx:id="tabelaOsobe" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" prefHeight="398.0" prefWidth="234.0">
+            <TableView fx:id="tabelaOsobe" layoutY="2.0" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" prefHeight="393.0" prefWidth="234.0">
               <columns>
-                <TableColumn prefWidth="116.0" text="Ime" fx:id="imeKolona"/>
-                <TableColumn prefWidth="117.0" text="Prezime" fx:id="prezimaKolona"/>e
+                <TableColumn fx:id="imeKolona" prefWidth="117.0" text="Ime" />
+                <TableColumn fx:id="prezimeKolona" prefWidth="117.0" text="Prezime" />
               </columns>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </TableView>
          </children></AnchorPane>
       <GridPane hgap="15.0" maxHeight="-Infinity" prefHeight="393.0" prefWidth="359.0">
