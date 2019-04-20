@@ -18,7 +18,6 @@ public class Main extends Application {
         OsobeModel model = new OsobeModel();
         model.napuni();
         OsobaController ctrl = new OsobaController(model);
-        System.out.println(getClass().getResource("/resources/fxml/adresar.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/adresar.fxml"));
         loader.setController(ctrl);
         Parent root = loader.load();

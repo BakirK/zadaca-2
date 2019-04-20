@@ -9,7 +9,10 @@ import java.time.LocalDate;
 public class OsobeModel {
 
         private ObservableList<Osoba> osobe = FXCollections.observableArrayList();
-        private SimpleObjectProperty<Osoba> trenutnaOsoba = new SimpleObjectProperty();
+
+
+
+    private SimpleObjectProperty<Osoba> trenutnaOsoba = new SimpleObjectProperty();
 
 
         public ObservableList<Osoba> getOsobe() {
@@ -24,13 +27,14 @@ public class OsobeModel {
             return trenutnaOsoba.get();
         }
 
+        private void setTrenutnaOsoba(Osoba trenutnaOsoba) {
+            this.trenutnaOsoba.set(trenutnaOsoba);
+        }
         public SimpleObjectProperty trenutnaOsobaProperty() {
             return trenutnaOsoba;
         }
 
-        public void setTrenutnaOsoba(Object trenutnaOsoba) {
-            this.trenutnaOsoba.set((Osoba) trenutnaOsoba);
-        }
+
 
         public void napuni () {
             osobe.add(new Osoba("Semso", "Semsic", "Pozegina 42", 71000, "Sarajevo", LocalDate.of(1999, 9, 23)));
@@ -51,7 +55,7 @@ public class OsobeModel {
 
         public void obrisi(int index) {
             osobe.remove(index);
-            //trenutnaOsoba = null;
+            trenutnaOsoba = null;
         }
 }
 

@@ -61,6 +61,7 @@ public class OsobaController {
         tabelaOsobe.setItems(model.getOsobe());
 
         tabelaOsobe.getFocusModel().focus(0);
+        setTextPropetryUnBind();
         //System.out.println("initialize");
 
         //listener
@@ -87,9 +88,13 @@ public class OsobaController {
 
     @FXML
     private void updateSelectedUser() {
+        if(model.trenutnaOsobaProperty() == null) {
+            System.out.println("NULL");
+            model.setTrenutnaOsoba(new Osoba("","","",1,"",LocalDate.of(1900,1,1)));
+        }
         Osoba o = (Osoba) tabelaOsobe.getSelectionModel().getSelectedItem();
         setTextPropetryUnBind();
-        System.out.println(tabelaOsobe.getSelectionModel().getSelectedItem());
+        //System.out.println(tabelaOsobe.getSelectionModel().getSelectedItem());
         model.setTrenutnaOsoba(o);
         setTextPropetryBind();
         //tabelaOsobe.setItems(model.getOsobe());
@@ -137,10 +142,11 @@ public class OsobaController {
         //setTextPropetryBind();
         setTextPropetryUnBind();
         model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
+        //setTextPropetryBind();
         tabelaOsobe.refresh();
         tabelaOsobe.requestFocus();
         //tabelaOsobe.getSelectionModel().selectLast();
-        setTextPropetryBind();
+
 
     }
 
