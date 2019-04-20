@@ -77,6 +77,12 @@ public class OsobaController {
     }
 
     private void setTextPropetryUnBind() {
+        imeText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().imeProperty());
+        prezimeText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().prezimeProperty());
+        ulicaText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().ulicaProperty());
+        gradText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().gradProperty());
+        postanskiBrojText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().postanskiBrojProperty());
+        rodjendanText.textProperty().unbindBidirectional(model.getTrenutnaOsoba().rodjendanProperty());
 
     }
 }
