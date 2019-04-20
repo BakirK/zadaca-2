@@ -89,7 +89,7 @@
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
               <buttons>
 
-                <Button fx:id="btnDodaj" mnemonicParsing="false" onAction="#obrisiOsobu" onMouseClicked="#dodajOsobu" text="Dodaj">
+                <Button fx:id="btnDodaj" mnemonicParsing="false" onMouseClicked="#dodajOsobu" text="Dodaj">
                         <graphic>
                             <ImageView fitHeight="16" fitWidth="16" preserveRatio="false">
                                 <image>
@@ -99,7 +99,7 @@
                         </graphic>
                   </Button>
 
-                  <Button fx:id="btnObrisi" mnemonicParsing="false" onAction="#obrisiOsobu" onMouseClicked="#obrisiOsobu" text="Obrisi">
+                  <Button fx:id="btnObrisi" mnemonicParsing="false" onMouseClicked="#obrisiOsobu" text="Obrisi">
                       <graphic>
                           <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                               <image>

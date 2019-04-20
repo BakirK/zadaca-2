@@ -133,6 +133,7 @@ public class OsobaController {
     // TODO: implementirat metodu obrisi u klasi OsobeModel
     @FXML
     private void obrisiOsobu(MouseEvent mouseEvent) {
+        //model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
     }
 
     @FXML
