@@ -8,12 +8,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -37,15 +38,24 @@ public class OsobaController {
     private Button btnObrisi;
     @FXML
     private TableView tabelaOsobe;
-    ObservableList<Osoba> lista = FXCollections.observableArrayList();;
+
     private OsobeModel model;
+
+
+    //ObservableList<Osoba> lista = FXCollections.observableArrayList();
+
+
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
+        //lista = FXCollections.observableArrayList(model.getOsobe());
     }
 
     @FXML
     public void initialize() {
+        //imeKolona.setCellValueFactory(new PropertyValueFactory<Osoba, String>("Ime"));
+        //prezimaKolona.setCellValueFactory(new  PropertyValueFactory<Osoba, String>("Prezime"));
         tabelaOsobe.requestFocus();
+
         model.setTrenutnaOsoba(model.getOsobe().get(0));
         setTextPropetryBind();
         tabelaOsobe.setItems(model.getOsobe());
@@ -81,7 +91,7 @@ public class OsobaController {
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(o);
         setTextPropetryBind();
-        tabelaOsobe.setItems(model.getOsobe());
+        //tabelaOsobe.setItems(model.getOsobe());
         tabelaOsobe.refresh();
     }
 
@@ -112,7 +122,7 @@ public class OsobaController {
         model.dodaj(o);
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
-        tabelaOsobe.getItems().add(o);
+        //tabelaOsobe.getItems().add(o);
         setTextPropetryBind();
         tabelaOsobe.refresh();
         tabelaOsobe.requestFocus();
