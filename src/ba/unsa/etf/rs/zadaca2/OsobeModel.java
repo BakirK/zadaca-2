@@ -4,6 +4,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.time.LocalDate;
+
 public class OsobeModel {
 
         private ObservableList<Osoba> osobe = FXCollections.observableArrayList();
@@ -31,12 +33,15 @@ public class OsobeModel {
         }
 
         public void napuni () {
-            osobe.add(new Osoba("Bakir", "Karović", "Pozegina 42", 71000, "Sarajevo", "23.09.1999"));
-            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", 71000, "Sarajevo", "13.01.1999"));
-            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse",8010, "Graz",  "28.02.2000"));
-            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", 1000, "Brisel", "07.03.2000"));
-            osobe.add(new Osoba("Nadir", "Muratovic", "Dvorska", 71000, "Sarejevo", "21.07.1999"));
-            osobe.add(new Osoba("Pujdo", "Ker", "Neretvanska", 71000, "Sarajevo", "20.04.2019"));
+            osobe.add(new Osoba("Bakir", "Karović", "Pozegina 42", 71000, "Sarajevo", LocalDate.of(1999, 9, 23)));
+            osobe.add(new Osoba("Faris", "Baždar", "Gradačačka 16", 71000, "Sarajevo", LocalDate.of(1999, 1, 13)));
+            osobe.add(new Osoba("Šeila", "Šeilić", "Herrengasse",8010, "Graz",  LocalDate.of(2000, 2, 28)));
+            osobe.add(new Osoba("Amra", "Amrica", "Rue Neuve", 1000, "Brisel", LocalDate.of(2000, 3, 7)));
+            osobe.add(new Osoba("Nadir", "Muratovic", "Dvorska", 71000, "Sarejevo", LocalDate.of(1999, 7, 21)));
+            osobe.add(new Osoba("Pujdo", "Ker", "Neretvanska", 71000, "Sarajevo", LocalDate.of(2018, 12, 16)));
+            osobe.add(new Osoba("Lamija", "Lamsa", "Nanin sokak", 71000, "Sarajevo", LocalDate.of(1999, 3, 11)));
+            osobe.add(new Osoba("Darko", "Randic", "Mula Mustafe Baseskije", 71000, "Sarajevo", LocalDate.of(1999, 5, 1)));
+            osobe.add(new Osoba("Jasmin", "Dzelo", "Neretvanska", 71000, "Sarajevo", LocalDate.of(1985, 4, 1)));
         }
 
         public void dodaj(Osoba o) {
