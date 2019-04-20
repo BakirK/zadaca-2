@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.util.converter.LocalDateStringConverter;
+import javafx.util.converter.NumberStringConverter;
 
 public class OsobaController {
     private OsobeModel model;
@@ -52,7 +54,7 @@ public class OsobaController {
                 if (osobaNew == null) {
                     // TODO: SET DEFAULT TEXT ZA POLJA FORME
                 } else {
-                    updateSelectedUSer();
+                    updateSelectedUser();
                 }
                 tabelaOsobe.refresh();
             }
@@ -60,12 +62,18 @@ public class OsobaController {
         });
     }
 
-    private void updateSelectedUSer() {
+    private void updateSelectedUser() {
+
     }
 
 
     private void setTextPropetryBind() {
-
+        imeText.textProperty().bindBidirectional(model.getTrenutnaOsoba().imeProperty());
+        prezimeText.textProperty().bindBidirectional(model.getTrenutnaOsoba().prezimeProperty());
+        ulicaText.textProperty().bindBidirectional(model.getTrenutnaOsoba().ulicaProperty());
+        gradText.textProperty().bindBidirectional(model.getTrenutnaOsoba().gradProperty());
+        postanskiBrojText.textProperty().bindBidirectional(model.getTrenutnaOsoba().postanskiBrojProperty(), new NumberStringConverter());
+        rodjendanText.textProperty().bindBidirectional(model.getTrenutnaOsoba().rodjendanProperty(), new LocalDateStringConverter());
     }
 
     private void setTextPropetryUnBind() {
