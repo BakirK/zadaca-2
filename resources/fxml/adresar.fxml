@@ -95,7 +95,7 @@
                         </graphic>
                   </Button>
 
-                  <Button mnemonicParsing="false" text="Obrisi" fx:id="btnObrisi">
+                  <Button mnemonicParsing="false" text="Obrisi" fx:id="btnObrisi" onMouseClicked="#obrisiOsobu">
                       <graphic>
                           <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
                               <image>

@@ -69,7 +69,11 @@ public class OsobaController {
 
     @FXML
     private void updateSelectedUser() {
-
+        Osoba o = (Osoba) tabelaOsobe.getSelectionModel().getSelectedItem();
+        setTextPropetryUnBind();
+        model.setTrenutnaOsoba(o);
+        setTextPropetryBind();
+        tabelaOsobe.refresh();
     }
 
 
@@ -101,5 +105,9 @@ public class OsobaController {
         tabelaOsobe.refresh();
         tabelaOsobe.requestFocus();
         tabelaOsobe.getSelectionModel().selectLast();
+    }
+
+    @FXML
+    private void obrisiOsobu(MouseEvent mouseEvent) {
     }
 }
