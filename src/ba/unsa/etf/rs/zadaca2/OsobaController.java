@@ -117,12 +117,13 @@ public class OsobaController {
     @FXML
     private void dodajOsobu(MouseEvent mouseEvent) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-        LocalDate temp = LocalDate.parse(rodjendanText.getValue().format(formatter), formatter);
-        Osoba o = new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(),  temp);
-        model.dodaj(o);
+        //LocalDate temp = LocalDate.parse(rodjendanText.getValue().);
+        //LocalDate temp = LocalDate.of(rodjendanText.getValue().getYear(), rodjendanText.getValue().getMonth(), rodjendanText.getValue().getDayOfMonth());
+        //Osoba o = new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(), temp);
+        Osoba o = new Osoba();
         setTextPropetryUnBind();
+        model.dodaj(o);
         model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
-        //tabelaOsobe.getItems().add(o);
         setTextPropetryBind();
         tabelaOsobe.refresh();
         tabelaOsobe.requestFocus();
@@ -133,7 +134,7 @@ public class OsobaController {
     // TODO: implementirat metodu obrisi u klasi OsobeModel
     @FXML
     private void obrisiOsobu(MouseEvent mouseEvent) {
-        //model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
+        model.obrisi(tabelaOsobe.getSelectionModel().getSelectedIndex());
     }
 
     @FXML
