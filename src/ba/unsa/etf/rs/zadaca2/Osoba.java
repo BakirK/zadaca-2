@@ -29,7 +29,7 @@ public class Osoba {
         this.ulica = new SimpleStringProperty(ulicaIn);
         this.grad = new SimpleStringProperty(gradIn);
         this.postanskiBroj = new SimpleIntegerProperty(postanskiBrojIn);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
         LocalDate temp = LocalDate.parse(dateIn, formatter);
         this.rodjendan = new SimpleObjectProperty<LocalDate>(temp);
     }

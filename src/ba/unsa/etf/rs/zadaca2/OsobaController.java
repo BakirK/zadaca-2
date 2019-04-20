@@ -1,10 +1,13 @@
 package ba.unsa.etf.rs.zadaca2;
 
+import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
@@ -66,7 +69,6 @@ public class OsobaController {
                 }
                 tabelaOsobe.refresh();
             }
-
         });
     }
 
@@ -113,5 +115,15 @@ public class OsobaController {
 
     @FXML
     private void obrisiOsobu(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    private void handle(KeyEvent event) {
+        if (event.getCode().isArrowKey()) {
+            updateSelectedUser();
+        }
+        else if (event.getCode() == KeyCode.ESCAPE) {
+            Platform.exit();
+        }
     }
 }

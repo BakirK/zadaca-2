@@ -22,7 +22,7 @@
   <items>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="233.0">
          <children>
-            <TableView fx:id="tabelaOsobe" onMouseClicked="#updateSelectedUser" prefHeight="398.0" prefWidth="234.0">
+            <TableView fx:id="tabelaOsobe" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" prefHeight="398.0" prefWidth="234.0">
               <columns>
                 <TableColumn prefWidth="116.0" text="Ime" />
                 <TableColumn prefWidth="117.0" text="Prezime" />
