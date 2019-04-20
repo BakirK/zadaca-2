@@ -49,8 +49,8 @@ public class OsobeModel {
             osobe.add(o);
         }
 
-        public void obrisi() {
-
+        public void obrisi(int index) {
+            osobe.remove(index);
         }
 }
 

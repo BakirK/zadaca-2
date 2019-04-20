@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
@@ -35,7 +36,7 @@ public class OsobaController {
     private Button btnObrisi;
     @FXML
     private TableView tabelaOsobe;
-
+    ObservableList<Osoba> lista;
     private OsobeModel model;
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
@@ -47,6 +48,7 @@ public class OsobaController {
         model.setTrenutnaOsoba(model.getOsobe().get(0));
         setTextPropetryBind();
         tabelaOsobe.setItems(model.getOsobe());
+
         tabelaOsobe.getFocusModel().focus(0);
         //System.out.println("initialize");
 
@@ -78,6 +80,7 @@ public class OsobaController {
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(o);
         setTextPropetryBind();
+        tabelaOsobe.setItems(model.getOsobe());
         tabelaOsobe.refresh();
     }
 
@@ -104,13 +107,16 @@ public class OsobaController {
     private void dodajOsobu(MouseEvent mouseEvent) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
         LocalDate temp = LocalDate.parse(rodjendanText.getValue().format(formatter), formatter);
-        model.dodaj(new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(),  temp));
+        Osoba o = new Osoba(imeText.getText(), prezimeText.getText(), ulicaText.getText(),Integer.parseInt(postanskiBrojText.getText()), gradText.getText(),  temp);
+        model.dodaj(o);
         setTextPropetryUnBind();
         model.setTrenutnaOsoba(model.getOsobe().get(model.getOsobe().size() - 1));
+        tabelaOsobe.getItems().add(o);
         setTextPropetryBind();
         tabelaOsobe.refresh();
         tabelaOsobe.requestFocus();
         tabelaOsobe.getSelectionModel().selectLast();
+
     }
 
     // TODO: implementirat metodu obrisi u klasi OsobeModel
