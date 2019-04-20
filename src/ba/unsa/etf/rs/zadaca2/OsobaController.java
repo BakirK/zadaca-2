@@ -63,7 +63,7 @@ public class OsobaController {
                     ulicaText.setText("");
                     gradText.setText("");
                     postanskiBrojText.setText("");
-//                    rodjendanText.setDayCellFactory();
+                    rodjendanText.setValue(LocalDate.of(1900,1,1));
                 } else {
                     updateSelectedUser();
                 }
@@ -113,6 +113,7 @@ public class OsobaController {
         tabelaOsobe.getSelectionModel().selectLast();
     }
 
+    // TODO: implementirat metodu obrisi u klasi OsobeModel
     @FXML
     private void obrisiOsobu(MouseEvent mouseEvent) {
     }
