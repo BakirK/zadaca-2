@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Osoba {
     private SimpleStringProperty ime = new SimpleStringProperty("<Novi korisnik>");
@@ -13,6 +14,24 @@ public class Osoba {
     private SimpleStringProperty grad = new SimpleStringProperty("");
     private SimpleIntegerProperty postanskiBroj = new SimpleIntegerProperty();
     private SimpleObjectProperty<LocalDate> rodjendan = new SimpleObjectProperty<LocalDate>();
+
+
+    public Osoba(){
+
+    }
+
+    public Osoba(String imeIn, String prezimeIn, String ulicaIn, String gradIn,
+                 Integer postanskiBrojIn, String dateIn){
+
+        this.ime = new SimpleStringProperty(imeIn);
+        this.prezime = new SimpleStringProperty(prezimeIn);
+        this.ulica = new SimpleStringProperty(ulicaIn);
+        this.grad = new SimpleStringProperty(gradIn);
+        this.postanskiBroj = new SimpleIntegerProperty(postanskiBrojIn);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
+        LocalDate temp = LocalDate.parse(dateIn, formatter);
+        this.rodjendan = new SimpleObjectProperty<LocalDate>(temp);
+    }
 
 
     private String getIme() {
