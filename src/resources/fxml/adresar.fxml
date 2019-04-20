@@ -18,7 +18,7 @@
 
 <!--TODO: obrisat fx:controller unutar splitPane-a -->
 
-<SplitPane dividerPositions="0.39464882943143814" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.zadaca2.OsobaController">
+<SplitPane dividerPositions="0.39464882943143814" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
   <items>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="233.0">
          <children>
@@ -90,7 +90,7 @@
                         <graphic>
                             <ImageView fitHeight="16" fitWidth="16" preserveRatio="false">
                                 <image>
-                                    <Image url="../list-add.png" />
+                                    <Image url="/list-add.png" />
                                 </image>
                             </ImageView>
                         </graphic>
@@ -100,7 +100,7 @@
                       <graphic>
                           <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                               <image>
-                                  <Image url="../edit-delete.png" />
+                                  <Image url="/edit-delete.png" />
                               </image>
                           </ImageView>
                       </graphic>

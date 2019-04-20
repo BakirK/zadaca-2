@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class OsobaController {
-    private OsobeModel model;
+
     @FXML
     private TextField imeText;
     @FXML
@@ -36,7 +36,7 @@ public class OsobaController {
     @FXML
     private TableView tabelaOsobe;
 
-
+    private OsobeModel model;
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
     }

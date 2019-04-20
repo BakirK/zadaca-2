@@ -31,7 +31,7 @@ class OsobaControllerTest {
         model.napuni();
         OsobaController ctrl = new OsobaController(model);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/adresar.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/adresar.fxml"));
         loader.setController(ctrl);
         Parent root = loader.load();
 
