@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Osoba {
-    private SimpleStringProperty ime = new SimpleStringProperty("<Novi korisnik>");
+    private SimpleStringProperty ime = new SimpleStringProperty("");
     private SimpleStringProperty prezime = new SimpleStringProperty("");
     private SimpleStringProperty ulica = new SimpleStringProperty("");
     private SimpleStringProperty grad = new SimpleStringProperty("");
@@ -122,6 +122,6 @@ public class Osoba {
 
     @Override
     public String toString() {
-        return ime.get() + prezime.get();
+        return ime.get() + " " + prezime.get();
     }
 }
