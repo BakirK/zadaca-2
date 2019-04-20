@@ -8,9 +8,9 @@ import java.time.LocalDate;
 
 public class Osoba {
     private SimpleStringProperty ime = new SimpleStringProperty("<Novi korisnik>");
-    private SimpleStringProperty prezime = new SimpleStringProperty("<Novi korisnik>");
-    private SimpleStringProperty ulica = new SimpleStringProperty("<Novi korisnik>");
-    private SimpleStringProperty grad = new SimpleStringProperty("<Novi korisnik>");
+    private SimpleStringProperty prezime = new SimpleStringProperty("");
+    private SimpleStringProperty ulica = new SimpleStringProperty("");
+    private SimpleStringProperty grad = new SimpleStringProperty("");
     private SimpleIntegerProperty postanskiBroj = new SimpleIntegerProperty();
     private SimpleObjectProperty<LocalDate> rodjendan = new SimpleObjectProperty<LocalDate>();
 
