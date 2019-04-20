@@ -15,6 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         OsobeModel model = new OsobeModel();
         model.napuni();
         OsobaController ctrl = new OsobaController(model);
