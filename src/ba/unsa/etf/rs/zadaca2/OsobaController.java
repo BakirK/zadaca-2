@@ -12,9 +12,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
 import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -38,24 +38,45 @@ public class OsobaController {
     private Button btnObrisi;
     @FXML
     private TableView tabelaOsobe;
-
+    ObservableList<Osoba> lista = FXCollections.observableArrayList();;
     private OsobeModel model;
-
-
-    //ObservableList<Osoba> lista = FXCollections.observableArrayList();
-
+    @FXML
+    private TableColumn imeKolona;
+    @FXML
+    private TableColumn prezimeKolona;
 
     public OsobaController(OsobeModel modelInput) {
         model = modelInput;
-        //lista = FXCollections.observableArrayList(model.getOsobe());
+        lista = FXCollections.observableArrayList(model.getOsobe());
     }
 
     @FXML
     public void initialize() {
-        //imeKolona.setCellValueFactory(new PropertyValueFactory<Osoba, String>("Ime"));
-        //prezimaKolona.setCellValueFactory(new  PropertyValueFactory<Osoba, String>("Prezime"));
-        tabelaOsobe.requestFocus();
+        postanskiBrojText.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                //if (!newValue.matches("[,]")) {
+                postanskiBrojText.setText(newValue.replaceAll("[,]", ""));
+                //}
 
+            }
+        });
+        postanskiBrojText.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (postanskiBrojText.isFocused() && !postanskiBrojText.getText().isEmpty()) {
+                            postanskiBrojText.selectAll();
+                        }
+                    }
+                });
+            }
+        });
+        imeKolona.setCellValueFactory(new PropertyValueFactory<Osoba, String>("Ime"));
+        prezimeKolona.setCellValueFactory(new PropertyValueFactory<>("Prezime"));
+        tabelaOsobe.requestFocus();
         model.setTrenutnaOsoba(model.getOsobe().get(0));
         setTextPropetryBind();
         tabelaOsobe.setItems(model.getOsobe());
@@ -98,7 +119,7 @@ public class OsobaController {
         //System.out.println(tabelaOsobe.getSelectionModel().getSelectedItem());
         model.setTrenutnaOsoba(o);
         setTextPropetryBind();
-        //tabelaOsobe.setItems(model.getOsobe());
+        tabelaOsobe.setItems(model.getOsobe());
         tabelaOsobe.refresh();
     }
 
