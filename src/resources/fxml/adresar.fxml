@@ -22,7 +22,7 @@
   <items>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="233.0">
          <children>
-            <TableView fx:id="tabelaOsobe" layoutY="2.0" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" prefHeight="393.0" prefWidth="234.0">
+            <TableView fx:id="tabelaOsobe" layoutY="2.0" onKeyPressed="#handle" onMouseClicked="#updateSelectedUser" onSort="#sortTable" prefHeight="393.0" prefWidth="234.0">
               <columns>
                 <TableColumn fx:id="imeKolona" prefWidth="117.0" text="Ime" />
                 <TableColumn fx:id="prezimeKolona" prefWidth="117.0" text="Prezime" />
@@ -81,7 +81,7 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <DatePicker fx:id="rodjendanText" prefHeight="25.0" prefWidth="193.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <DatePicker fx:id="rodjendanText" onInputMethodTextChanged="#updateDate" prefHeight="25.0" prefWidth="193.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

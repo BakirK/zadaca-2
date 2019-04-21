@@ -16,6 +16,7 @@ import javafx.util.converter.LocalDateStringConverter;
 import javafx.util.converter.NumberStringConverter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class OsobaController {
@@ -52,13 +53,31 @@ public class OsobaController {
 
     @FXML
     public void initialize() {
+        rodjendanText.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate localDate, LocalDate t1) {
+                String date = t1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                System.out.println(date);
+                rodjendanText.getEditor().setText(date);
+            }
+        });
+/*
+        rodjendanText.getEditor().textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldDate, String newDate) {
+
+                if (oldDate != newDate) {
+                    System.out.println("AA");
+                }
+            }
+        });*/
+
         postanskiBrojText.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 //if (!newValue.matches("[,]")) {
                 postanskiBrojText.setText(newValue.replaceAll("[,]", ""));
                 //}
-
             }
         });
         postanskiBrojText.focusedProperty().addListener(new ChangeListener<Boolean>() {
@@ -83,8 +102,6 @@ public class OsobaController {
 
         tabelaOsobe.getFocusModel().focus(0);
         setTextPropetryUnBind();
-        //System.out.println("initialize");
-
 
         //listener
         tabelaOsobe.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Osoba>() {
@@ -103,6 +120,9 @@ public class OsobaController {
                 } else {
                     updateSelectedUser();
                 }
+                String date = rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                System.out.println(date);
+                rodjendanText.getEditor().setText(date);
                 tabelaOsobe.refresh();
             }
         });
@@ -180,5 +200,14 @@ public class OsobaController {
         else if (event.getCode() == KeyCode.ESCAPE) {
             Platform.exit();
         }
+    }
+    // TODO implementirat sort method nad tabelom
+    @FXML
+    private void sortTable() {
+    }
+
+    @FXML
+    private void updateDate() {
+        System.out.println("aa");
     }
 }
