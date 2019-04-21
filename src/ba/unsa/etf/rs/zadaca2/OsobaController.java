@@ -54,29 +54,37 @@ public class OsobaController {
     @FXML
     public void initialize() {
 
+        //value za date picker
+
+
+
         //text field date picker-a
         rodjendanText.getEditor().textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldDate, String newDate) {
-                if (newDate.matches("[0-3][0-9][/][0-1][0-9][/][1-2][0-9][0-9][0-9]")) {
-                    LocalDate temp = LocalDate.parse(rodjendanText.getEditor().getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                    rodjendanText.setValue(temp);
-                    //System.out.println("AA");
+                if (rodjendanText.getEditor().getText().matches("[0-3][0-9][/][0-1][0-9][/][1-2][0-9][0-9][0-9]")) {
+                    if (rodjendanText.getEditor().getText().equals(rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))) {
+                        System.out.println("isti");
+                        LocalDate temp = LocalDate.parse(rodjendanText.getEditor().getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                        setTextPropetryUnBind();
+                        rodjendanText.setValue(temp);
+                        //String date = rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                        //rodjendanText.getEditor().setText(date);
+                        //setTextPropetryBind();
+                    }
                 }
             }
         });
-
-        //value za date picker
+/*
         rodjendanText.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
             public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate localDate, LocalDate t1) {
                 if (t1 != null) {
                     String date = t1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                    //System.out.println(date);
                     rodjendanText.getEditor().setText(date);
                 }
             }
-        });
+        });*/
 
         postanskiBrojText.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -128,7 +136,6 @@ public class OsobaController {
                 }
                 if (rodjendanText.getValue() != null) {
                     String date = rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                    System.out.println(date);
                     rodjendanText.getEditor().setText(date);
                 }
                 tabelaOsobe.refresh();
