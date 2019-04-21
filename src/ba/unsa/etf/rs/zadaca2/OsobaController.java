@@ -64,6 +64,7 @@ public class OsobaController {
         setTextPropetryUnBind();
         //System.out.println("initialize");
 
+
         //listener
         tabelaOsobe.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Osoba>() {
             @Override
@@ -89,7 +90,7 @@ public class OsobaController {
     @FXML
     private void updateSelectedUser() {
         if(model.trenutnaOsobaProperty() == null) {
-            System.out.println("NULL");
+            //System.out.println("NULL");
             model.setTrenutnaOsoba(new Osoba("","","",1,"",LocalDate.of(1900,1,1)));
         }
         Osoba o = (Osoba) tabelaOsobe.getSelectionModel().getSelectedItem();

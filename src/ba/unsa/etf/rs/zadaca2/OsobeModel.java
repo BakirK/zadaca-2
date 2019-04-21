@@ -26,10 +26,10 @@ public class OsobeModel {
         public void setTrenutnaOsoba(Osoba trenutnaOsoba) {
 
             if (this.trenutnaOsoba.get() == null) {
-                System.out.println("null222");
+                //System.out.println("null222");
             }
             if (this.trenutnaOsoba.get() == null) {
-                System.out.println("null222");
+                //System.out.println("null222");
             }
             this.trenutnaOsoba.set(trenutnaOsoba);
         }
