@@ -56,7 +56,15 @@ public class OsobaController {
 
         //value za date picker
 
-
+        rodjendanText.getEditor().focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
+                if(!t1) {
+                    LocalDate temp = LocalDate.parse(rodjendanText.getEditor().getText(), DateTimeFormatter.ofPattern("M/d/yyyy"));
+                    rodjendanText.setValue(temp);
+                }
+            }
+        });
 /*
         //text field date picker-a
         rodjendanText.getEditor().textProperty().addListener(new ChangeListener<String>() {
