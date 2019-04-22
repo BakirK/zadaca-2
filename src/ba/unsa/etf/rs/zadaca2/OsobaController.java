@@ -140,10 +140,6 @@ public class OsobaController {
                 } else {
                     updateSelectedUser();
                 }
-                if (rodjendanText.getValue() != null) {
-                    String date = rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                    rodjendanText.getEditor().setText(date);
-                }
                 tabelaOsobe.refresh();
             }
         });
