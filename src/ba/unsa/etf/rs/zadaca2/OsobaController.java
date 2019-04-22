@@ -118,12 +118,9 @@ public class OsobaController {
         });
         imeKolona.setCellValueFactory(new PropertyValueFactory<Osoba, String>("Ime"));
         prezimeKolona.setCellValueFactory(new PropertyValueFactory<>("Prezime"));
-        tabelaOsobe.requestFocus();
         model.setTrenutnaOsoba(model.getOsobe().get(0));
         setTextPropetryBind();
         tabelaOsobe.setItems(model.getOsobe());
-
-        tabelaOsobe.getFocusModel().focus(0);
         setTextPropetryUnBind();
 
         //listener
@@ -150,6 +147,8 @@ public class OsobaController {
                 tabelaOsobe.refresh();
             }
         });
+        tabelaOsobe.requestFocus();
+        tabelaOsobe.getSelectionModel().selectFirst();
     }
 
     @FXML
