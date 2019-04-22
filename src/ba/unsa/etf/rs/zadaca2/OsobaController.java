@@ -57,25 +57,26 @@ public class OsobaController {
         //value za date picker
 
 
-
+/*
         //text field date picker-a
         rodjendanText.getEditor().textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldDate, String newDate) {
                 if (rodjendanText.getEditor().getText().matches("[0-3][0-9][/][0-1][0-9][/][1-2][0-9][0-9][0-9]")) {
-                    if (rodjendanText.getEditor().getText().equals(rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))) {
+                    //if (rodjendanText.getEditor().getText().equals(rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))) {
                         System.out.println("isti");
-                        LocalDate temp = LocalDate.parse(rodjendanText.getEditor().getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                        String date = "16/12/2000";
+                        LocalDate temp = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                         setTextPropetryUnBind();
                         rodjendanText.setValue(temp);
                         //String date = rodjendanText.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                         //rodjendanText.getEditor().setText(date);
                         //setTextPropetryBind();
-                    }
+                    //}
                 }
             }
         });
-/*
+
         rodjendanText.valueProperty().addListener(new ChangeListener<LocalDate>() {
             @Override
             public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate localDate, LocalDate t1) {
